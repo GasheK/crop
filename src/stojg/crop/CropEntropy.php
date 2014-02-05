@@ -72,6 +72,7 @@ class CropEntropy extends Crop
         // The entropy works better on a blured image
         $image = clone $originalImage;
         $image->blurImage(3, 2);
+        $image->writeimage(__DIR__ . "/../../../crop-blur.jpg");
 
         $leftX = $this->slice($image,$targetWidth, 'h');
         $topY = $this->slice($image,$targetHeight, 'v');
